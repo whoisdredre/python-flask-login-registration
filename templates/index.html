@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>| Login |Register</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"
+	</head>
+	<body>
+	<h1>Welcome</h1>
+	<hr>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+	<h2>Log In</h2>
+	<form action="/login" method="post">
+		<input type="text" value="Email" name="my_email"><br>
+		<input type="password" value="password" name="password"><br>
+		<input type="submit" value="Log In">
+	</form>
+	<hr>
+	<h4>Don't have an account yet? Make One.</h4>
+	<form action="/register" method="post">
+		<input type="text" value="First Name" name="first_name"><br>
+		<input type="text" value="Last Name" name="last_name"><br>
+		<input type="text" value="Email@Something.Com" name="email"><br>
+		password:<br>
+		<input type="password" value="password" name="password"><br>
+		confirm:<br>
+		<input type="password" value="password" name="confirm"><br>
+		<input type="submit" value="Submit">
+	</form>
+	</body>
+</html>
